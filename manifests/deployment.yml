@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: loanfrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loanfrontend
+  template:
+    metadata:
+      labels:
+        app: loanfrontend 
+    spec:
+      containers:
+        - name: loanfrontend 
+          image: iciciloanacr.azurecr.io/loanfrontend
+          ports:
+          - containerPort: 80
